@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block title %}新しいタスクの追加 - To-Doリスト{% endblock %}
+
+{% block content %}
+<div class="form-container">
+    <h1>新しいタスクの追加</h1>
+
+    <form method="POST" class="task-form">
+        {{ form.hidden_tag() }}
+
+        <div class="form-group">
+            {{ form.title.label }}
+            {{ form.title(class="form-control") }}
+            {% for error in form.title.errors %}
+                <span class="error">{{ error }}</span>
+            {% endfor %}
+        </div>
+
+        <div class="form-group">
+            {{ form.description.label }}
+            {{ form.description(class="form-control", rows=4) }}
+            {% for error in form.description.errors %}
+                <span class="error">{{ error }}</span>
+            {% endfor %}
+        </div>
+
+        <div class="form-group">
+            {{ form.due_date.label }}
+            {{ form.due_date(class="form-control", type="date") }}
+            {% for error in form.due_date.errors %}
+                <span class="error">{{ error }}</span>
+            {% endfor %}
+        </div>
+
+        <div class="form-group">
+            {{ form.priority.label }}
+            {{ form.priority(class="form-control") }}
+            {% for error in form.priority.errors %}
+                <span class="error">{{ error }}</span>
+            {% endfor %}
+        </div>
+
+        <div class="form-actions">
+            <a href="{{ url_for('index') }}" class="btn btn-secondary">キャンセル</a>
+            {{ form.submit(class="btn btn-primary") }}
+        </div>
+    </form>
+</div>
+{% endblock %}
