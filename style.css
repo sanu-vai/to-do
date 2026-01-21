@@ -1,0 +1,400 @@
+/* グローバルスタイル */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #0e11de33;
+    background-color: #0de847;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px; 
+    flex: 1; 
+}
+
+/* ナビゲーション */
+.navbar {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 1rem 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.nav-container {
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.nav-logo {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    transition: opacity 0.3s; 
+}
+
+.nav-link:hover {
+    opacity: 0.8; 
+}
+
+
+
+/* ボタン */
+.btn { 
+    display: inline-block; 
+    padding: 10px 20px; 
+    text-decoration: none; 
+    border-radius: 5px; 
+    border: none; 
+    cursor: pointer;
+    transition: all 0.3s;
+    font-weight: 500;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.btn-success {
+    background: #28a745;
+    color: white;
+}
+
+.btn-warning {
+    background: #94c7ee;
+    color: #db7940;
+}
+
+.btn-danger {
+    background: #dc3545;
+    color: white;
+}
+
+.btn-secondary {
+    background: #6c757d; 
+    color: white; 
+}
+
+/* ヘッダー */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.header h1 {
+    color: #333;
+    font-size: 2.5rem;
+}
+
+/* タスクカード */
+.tasks-container {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+}
+
+.task-card {
+    background: white; 
+    padding: 1.5rem; 
+    border-radius: 10px; 
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.task-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+}
+
+.task-card.completed {
+    opacity: 0.7;
+    background: #f8f9fa;
+}
+
+.task-card.completed h3 {
+    text-decoration: line-through;
+}
+
+.task-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.task-header h3 {
+    color: #333; 
+    font-size: 1.3rem; 
+} 
+
+.priority-badge { 
+    padding: 5px 10px; 
+    border-radius: 20px; 
+
+font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.priority-high {
+    background: #dc3545;
+    color: white;
+}
+
+.priority-medium {
+    background: #ffc107;
+    color: #212529;
+}
+
+.priority-low {
+    background: #28a745;
+    color: white;
+}
+
+.task-description {
+    color: #666;
+    margin-bottom: 1rem;
+    line-height: 1.6; 
+}
+
+.task-meta {
+    display: flex; 
+    justify-content: space-between; 
+    margin-bottom: 1rem; 
+    font-size: 0.9rem; 
+    color: #888; 
+}
+
+.task-actions {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.task-actions .btn {
+    font-size: 0.9rem;
+    padding: 8px 12px;
+}
+
+/* フォーム */
+.form-container {
+    max-width: 600px;
+    margin: 0 auto;
+    background: white;
+    padding: 2rem; 
+    border-radius: 10px; 
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.form-container h1 {
+    margin-bottom: 2rem; 
+    text-align: center; 
+    color: #333; 
+}
+
+.form-group {
+margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: #333;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 2px rgba(102,126,234,0.2);
+}
+
+.form-actions {
+    display: flex;
+    gap: 1rem; 
+    justify-content: flex-end; 
+    margin-top: 2rem;
+}
+
+.error {
+color: #dc3545;
+font-size: 0.9rem;
+margin-top: 0.5rem;
+display: block;
+}
+
+/* 空の状態 */
+.empty-state {
+text-align: center;
+padding: 3rem;
+background: rgba(209, 205, 205, 0.545);
+border-radius: 10px;
+box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.empty-state i {
+font-size: 4rem;
+color: #667eea;
+margin-bottom: 1rem;
+}
+
+.empty-state h2 {
+color: #333;
+margin-bottom: 1rem;
+}
+
+.empty-state p {
+color: #666;
+margin-bottom: 2rem;
+}
+
+/* アラート */
+.alert {
+    padding: 1rem;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+}
+
+.alert-success {
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+}
+
+.alert-error {
+    color: #e8bfc3;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+}
+
+/* エラーページ */
+.error-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 60vh;
+}
+
+.error-content {
+    text-align: center;
+    background: white;
+    padding: 3rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.error-content h1 {
+    color: #dc3545;
+    margin-bottom: 1rem;
+}
+
+.error-content p {
+    color: #666;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+}
+
+/* フッター */
+.footer {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    text-align: center;
+    padding: 1.5rem 0;
+    margin-top: auto;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+/* レスポンシブデザイン */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+
+    .nav-container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .nav-menu {
+        gap: 1rem;
+    }
+
+    .tasks-container {
+        grid-template-columns: 1fr;
+    }
+
+    .task-meta {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .task-actions {
+        justify-content: center;
+    }
+
+    .form-actions {
+        flex-direction: column;
+    }
+
+    .footer {
+        padding: 1rem 0;
+    }
+
+    .footer p {
+        font-size: 0.8rem;
+    }
+}
